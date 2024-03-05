@@ -8,5 +8,5 @@ import (
 
 func Homepage(c *fiber.Ctx) error {
 	ipaddr := musik.GetIPaddress()
-	return c.JSON(ipaddr)
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{"ipaddress": ipaddr})
 }

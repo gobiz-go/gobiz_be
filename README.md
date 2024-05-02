@@ -1,6 +1,6 @@
 # boilerplate
 
-boilerplate for beginner. Using go fiber as base framework.
+boilerplate for beginner. Using go fiber as base framework. This bolerplate compatible with fly.io CI/CD deployment.
 
 
 ## Folder Structure

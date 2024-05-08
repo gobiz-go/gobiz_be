@@ -23,3 +23,8 @@ go mod tidy
 
 Then replace package import with the name gocroot/... in the main.go, controller.go dan url.go
 
+## Github Action
+
+inside folder .github/workflows, you might chose your cloud provider and remove .template ekstension :
+1. fly.io : fly.yml
+2. alwaysdata.com : alwaysdata.yml

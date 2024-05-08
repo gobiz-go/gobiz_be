@@ -18,7 +18,7 @@ This boilerplate have several folder with different function, such as:
 * config : all of apps configuration like: database, api, token.
 * contoller : all of endpoint function
 * model : all of type struct used in this apps
-* helper : additional package
+* helper : package folder with function only called by others
 
 
 ## Rename Apps

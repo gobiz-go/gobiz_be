@@ -51,3 +51,4 @@ jobs:
         port: ${{ secrets.sshport }}
         script: |
           chmod a+x gocroot
+          export MONGOSTRING=${{ secrets.mongostring }}

@@ -9,7 +9,7 @@ This boilerplate have several folder with different function, such as:
 * url : same as routes, this folder act to route URL in browser into controller
 * config : all of apps configuration like: database, api, token.
 * contoller : all of endpoint function
-* model : all of data structure using in this apps
+* model : all of type struct used in this apps
 
 
 ## Rename Apps

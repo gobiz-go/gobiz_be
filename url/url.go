@@ -8,6 +8,7 @@ import (
 
 func Web(page *fiber.App) {
 	page.Get("/", controller.Homepage)
+	page.Get("/ip", controller.GetIPServer)
 
 	page.Get("/auth/phonenumber/:login", controller.GetPhoneNumber)
 }

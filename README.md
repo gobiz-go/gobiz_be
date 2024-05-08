@@ -2,6 +2,14 @@
 
 boilerplate for beginner. Using go fiber as base framework. This bolerplate compatible with fly.io CI/CD deployment.
 
+## env setting
+Please set environtment variabel in your system:
+```sh
+PUBLICKEY=YOURPUBLICKEY
+MONGOSTRING=YOURMONGOSTRINGACCESS
+URLAPI=YOUR3rdPARTYURLAPI
+```
+
 
 ## Folder Structure
 

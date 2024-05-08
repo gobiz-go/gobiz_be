@@ -27,7 +27,7 @@ jobs:
       run: go build
 
     - name: chmod
-      run: chmod a+x gocroot
+      run: chmod a+x .
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5

@@ -24,10 +24,20 @@ jobs:
       run: go get .
     
     - name: Build
-      run: go build
+      run: go build -o gocroot
 
     - name: chmod
-      run: chmod a+x .
+      run: chmod a+x gocroot
+    
+    - name: copy file via ssh password
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.sshhost }}
+        username: ${{ secrets.sshusername }}
+        password: ${{ secrets.sshpassword }}
+        port: 22
+        source: "gocroot"
+        target: ~
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5

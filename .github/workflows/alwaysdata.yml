@@ -41,3 +41,13 @@ jobs:
           **/*.go*
           *.go
           **/*.git*/**
+
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.sshhost }}
+        username: ${{ secrets.sshusername }}
+        password: ${{ secrets.sshpassword }}
+        port: ${{ secrets.sshport }}
+        script: |
+          chmod a+x gocroot

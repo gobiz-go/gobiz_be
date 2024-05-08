@@ -26,5 +26,5 @@ Then replace package import with the name gocroot/... in the main.go, controller
 ## Github Action
 
 inside folder .github/workflows, you might chose your cloud provider and remove .template ekstension :
-1. fly.io : fly.yml
-2. alwaysdata.com : alwaysdata.yml
+1. fly.io : fly.yml | set FLY_API_TOKEN in secrets menu
+2. alwaysdata.com : alwaysdata.yml | set server, username, and password in secrets menu

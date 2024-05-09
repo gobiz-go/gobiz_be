@@ -1,6 +1,7 @@
 package config
 
 import (
+	"gocroot/helper"
 	"os"
 
 	"github.com/aiteung/atdb"
@@ -9,7 +10,7 @@ import (
 var MongoString string = os.Getenv("MONGOSTRING")
 
 var DBUlbimongoinfo = atdb.DBInfo{
-	DBString: MongoString,
+	DBString: helper.SRVLookup(MongoString),
 	DBName:   "bukupedia",
 }
 

@@ -37,7 +37,7 @@ jobs:
         password: ${{ secrets.sshpassword }}
         port: 22
         source: "gocroot"
-        target: .
+        target: ${{ secrets.folder }}
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5

@@ -8,4 +8,5 @@ var Iteung = fiber.Config{
 	StrictRouting: true,
 	ServerHeader:  "GoCroot",
 	AppName:       "Golang Change Root",
+	Network:       "tcp6",
 }

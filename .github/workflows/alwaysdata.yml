@@ -49,3 +49,4 @@ jobs:
         script: |
           ls -la
           export MONGOSTRING=${{ secrets.mongostring }}
+          env

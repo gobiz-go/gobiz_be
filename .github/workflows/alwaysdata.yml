@@ -39,7 +39,7 @@ jobs:
         source: "gocroot"
         target: ${{ secrets.folder }}
 
-    - name: executing remote ssh commands using password
+    - name: Check binary file, ipaddress, and restart sites
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.sshhost }}
@@ -47,6 +47,6 @@ jobs:
         password: ${{ secrets.sshpassword }}
         port: ${{ secrets.sshport }}
         script: |
-          ls -la
-          export MONGOSTRING=${{ secrets.mongostring }}
-          env
+          ls -l gocroot
+          curl https://icanhazip.com/
+          curl -X POST --basic --user "${{ secrets.apikey }}:" https://api.alwaysdata.com/v1/site/${{ secrets.appid }}/restart/

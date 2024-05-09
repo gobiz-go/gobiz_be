@@ -39,19 +39,6 @@ jobs:
         source: "gocroot"
         target: ${{ secrets.folder }}
 
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with:
-        server: ${{ secrets.server }}
-        username: ${{ secrets.username }}
-        password: ${{ secrets.password }}
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/*.go*
-          *.go
-          **/*.git*/**
-
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@v1.0.3
       with:
@@ -60,5 +47,5 @@ jobs:
         password: ${{ secrets.sshpassword }}
         port: ${{ secrets.sshport }}
         script: |
-          chmod a+x gocroot
+          ls -la
           export MONGOSTRING=${{ secrets.mongostring }}

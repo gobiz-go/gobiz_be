@@ -17,7 +17,7 @@ jobs:
         # Semantic version range syntax or exact version of Go
         go-version: '1.22.x'
 
-    - name: CGO
+    - name: Set CGO_ENABLED=0
       run: go env -w CGO_ENABLED=0
   
     - name: Install dependencies
@@ -29,13 +29,13 @@ jobs:
     - name: chmod
       run: chmod a+x gocroot
     
-    - name: copy file via ssh password
+    - name: copy binary file via ssh password
       uses: appleboy/scp-action@v0.1.7
       with:
         host: ${{ secrets.sshhost }}
         username: ${{ secrets.sshusername }}
         password: ${{ secrets.sshpassword }}
-        port: 22
+        port: ${{ secrets.sshport }}
         source: "gocroot"
         target: ${{ secrets.folder }}
 

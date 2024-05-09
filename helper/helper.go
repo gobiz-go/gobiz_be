@@ -12,8 +12,9 @@ import (
 	"time"
 )
 
-func GetIPPort() (ipport string) {
+func GetAddress() (ipport string, network string) {
 	port := os.Getenv("PORT")
+	network = "tcp4"
 	if port == "" {
 		port = ":8080"
 	} else if port[0:1] != ":" {
@@ -25,6 +26,7 @@ func GetIPPort() (ipport string) {
 				ipport = ip + ":" + port
 			} else {
 				ipport = "[" + ip + "]" + ":" + port
+				network = "tcp6"
 			}
 		}
 	}

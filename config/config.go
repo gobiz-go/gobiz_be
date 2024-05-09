@@ -1,6 +1,12 @@
 package config
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"gocroot/helper"
+
+	"github.com/gofiber/fiber/v2"
+)
+
+var IPPort, Net = helper.GetAddress()
 
 var Iteung = fiber.Config{
 	Prefork:       true,
@@ -8,5 +14,5 @@ var Iteung = fiber.Config{
 	StrictRouting: true,
 	ServerHeader:  "GoCroot",
 	AppName:       "Golang Change Root",
-	Network:       "tcp6",
+	Network:       Net,
 }

@@ -12,5 +12,5 @@ func Homepage(c *fiber.Ctx) error {
 
 func GetIPServer(c *fiber.Ctx) error {
 	ipaddr := helper.GetIPaddress()
-	return c.Status(fiber.StatusOK).JSON(fiber.Map{"ipaddress": ipaddr})
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{"ip_address": ipaddr})
 }

@@ -7,7 +7,7 @@ import (
 )
 
 func Homepage(c *fiber.Ctx) error {
-	return c.Status(fiber.StatusOK).JSON("Hello Go Croot!!!")
+	return c.Status(fiber.StatusOK).JSON("Welcome to Go Croot!!!")
 }
 
 func GetIPServer(c *fiber.Ctx) error {

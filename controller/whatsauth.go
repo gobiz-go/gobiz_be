@@ -47,7 +47,7 @@ func HandlerQRLogin(msg model.IteungMessage, WAKeyword string) (resp model.Respo
 		Phonenumber: msg.Phone_number,
 		Delay:       msg.From_link_delay,
 	}
-	resp, _ = helper.PostStructWithToken[model.Response]("Token", config.WAAPIToken, dt, config.WAAPIQRLogin)
+	resp, _ = helper.PostStructWithToken[model.Response]("Token", WAAPIToken(), dt, config.WAAPIQRLogin)
 	return
 }
 
@@ -61,7 +61,12 @@ func HandlerIncomingMessage(msg model.IteungMessage) (resp model.Response) {
 		dt.IsGroup = true
 	}
 	if (msg.Phone_number != "628112000279") && (msg.Phone_number != "6283131895000") { //ignore pesan datang dari iteung
-		resp, _ = helper.PostStructWithToken[model.Response]("Token", config.WAAPIToken, dt, config.WAAPIMessage)
+		resp, _ = helper.PostStructWithToken[model.Response]("Token", WAAPIToken(), dt, config.WAAPIMessage)
 	}
 	return
+}
+
+func WAAPIToken() string {
+	token := "112"
+	return token
 }

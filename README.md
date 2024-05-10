@@ -68,16 +68,14 @@ Sign Up for a 100MB plan Free for life in [alwaysdata](https://www.alwaysdata.co
    ```
    ![image](https://github.com/gocroot/alwaysdata/assets/11188109/06330754-9167-4bf4-a214-5d75dab7c60a)  
 
-## Rename Apps
+## Upgrade Apps
 
-If you want to rename apps, please delete (go.mod) and (go.sum) files first, then type the command in your terminal or cmd :
+If you want to upgrade apps, please delete (go.mod) and (go.sum) files first, then type the command in your terminal or cmd :
 
 ```sh
 go mod init gocroot
 go mod tidy
 ```
-
-Then replace package import with the name (gocroot/...) in the (main.go), (controller.go) dan (url.go)
 
 ## Others Provider Github Action
 

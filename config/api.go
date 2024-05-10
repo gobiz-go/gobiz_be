@@ -4,6 +4,8 @@ import "os"
 
 var WAKeyword string = os.Getenv("WAQRKEYWORD")
 
+var WebhookURL string = os.Getenv("WEBHOOKURL")
+
 var WebhookSecret string = os.Getenv("WEBHOOKSECRET")
 
 var WAPhoneNumber string = os.Getenv("WAPHONENUMBER")

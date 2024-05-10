@@ -29,6 +29,19 @@ type Profile struct {
 	Phonenumber string `bson:"phonenumber"`
 }
 
+type WebHook struct {
+	URL    string `bson:"url" json:"url"`
+	Secret string `bson:"secret" json:"secret"`
+}
+
+type User struct {
+	PhoneNumber string  `bson:"phonenumber" json:"phonenumber"`
+	DeviceID    uint16  `bson:"deviceid" json:"deviceid"`
+	WebHook     WebHook `bson:"webhook" json:"webhook"`
+	Mongostring string  `bson:"mongostring" json:"mongostring"`
+	Token       string  `bson:"token" json:"token"`
+}
+
 type Reply struct {
 	Message string `bson:"messsage"`
 }

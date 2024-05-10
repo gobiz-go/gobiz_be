@@ -39,6 +39,7 @@ Sign Up for a 100MB plan Free for life in [alwaysdata](https://www.alwaysdata.co
    ```sh
    MONGOSTRING=YOURMONGOSTRINGACCESS
    WAQRKEYWORD=yourkeyword
+   WEBHOOKURL=https://yourappname.alwaysdata.net/whatsauth/webhook
    WEBHOOKSECRET=yoursecret
    WAPHONENUMBER=62811111
    ```
@@ -52,7 +53,7 @@ Sign Up for a 100MB plan Free for life in [alwaysdata](https://www.alwaysdata.co
 ## WhatsAuth Signup
 
 1. Go to the [WhatsAuth signup page](https://wa.my.id/) and scan with your WhatsApp camera menu for login. 
-2. Input the webhook URL(alwaysdata.net subdomain) and your secret from the WEBHOOKSECRET setting environment on Always Data.
+2. Input the webhook URL(https://yourappname.alwaysdata.net/whatsauth/webhook) and your secret from the WEBHOOKSECRET setting environment on Always Data.  
    ![image](https://github.com/gocroot/alwaysdata/assets/11188109/e0b5cb9d-e9b3-4d04-bbd5-b03bd12293da)  
 3. Follow [this instruction](https://whatsauth.my.id/docs/), in the end of instruction you will get 30 days token using [this request](https://wa.my.id/apidocs/#/signup/signUpNewUser)
 4. Save the token into MongoDB, open iteung db, create a profile collection and insert this JSON document with your 30-day token and your WhatsApp number.

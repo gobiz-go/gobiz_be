@@ -34,6 +34,26 @@ func WhatsAuthReceiver(c *fiber.Ctx) error {
 	return c.Status(fiber.StatusOK).JSON(resp)
 }
 
+func RefreshWAToken(c *fiber.Ctx) error {
+	dt := &model.WebHook{
+		URL:    config.WebhookURL,
+		Secret: config.WebhookSecret,
+	}
+	resp, err := helper.PostStructWithToken[model.User]("Token", WAAPIToken(config.WAPhoneNumber), dt, config.WAAPIQRLogin)
+	if err != nil {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": err.Error(), "response": resp})
+	}
+	profile := &model.Profile{
+		Phonenumber: resp.PhoneNumber,
+		Token:       resp.Token,
+	}
+	res, err := helper.ReplaceOneDoc(config.Mongoconn, "profile", bson.M{"phonenumer": resp.PhoneNumber}, profile)
+	if err != nil {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": err.Error(), "result": res})
+	}
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{"ip_address": res})
+}
+
 func IsLoginRequest(msg model.IteungMessage, keyword string) bool {
 	return strings.Contains(msg.Message, keyword) && msg.From_link
 }

@@ -55,7 +55,7 @@ func HandlerIncomingMessage(msg model.IteungMessage) (resp model.Response) {
 	dt := &model.TextMessage{
 		To:       msg.Chat_number,
 		IsGroup:  false,
-		Messages: "Hai hai hai kak " + msg.Alias_name,
+		Messages: GetRandomReplyFromMongo(msg),
 	}
 	if msg.Chat_server == "g.us" { //jika pesan datang dari group maka balas ke group
 		dt.IsGroup = true
@@ -64,6 +64,13 @@ func HandlerIncomingMessage(msg model.IteungMessage) (resp model.Response) {
 		resp, _ = helper.PostStructWithToken[model.Response]("Token", WAAPIToken(), dt, config.WAAPIMessage)
 	}
 	return
+}
+
+func GetRandomReplyFromMongo(msg model.IteungMessage) string {
+	rply, _ := helper.GetRandomDoc[model.Reply](config.Mongoconn, "reply", 1)
+	replymsg := strings.ReplaceAll(rply[0].Message, "#BOTNAME#", msg.Alias_name)
+	replymsg = strings.ReplaceAll(replymsg, "\\n", "\n")
+	return replymsg
 }
 
 func WAAPIToken() string {

@@ -24,6 +24,10 @@ type IteungMessage struct {
 	LiveLoc            bool    `json:"liveloc,omitempty" bson:"liveloc,omitempty"`
 }
 
+type Reply struct {
+	Message string `bson:"messsage"`
+}
+
 type TextMessage struct {
 	To       string `json:"to"`
 	IsGroup  bool   `json:"isgroup,omitempty"`

@@ -23,8 +23,6 @@ Follow this instruction:
    MONGOSTRING=YOURMONGOSTRINGACCESS
    WAQRKEYWORD=yourkeyword
    WEBHOOKSECRET=yoursecret
-   WAAPIQR=https://api.wa.my.id/api/whatsauth/request
-   WAAPITXTMSG=https://api.wa.my.id/api/send/message/text
    ```
    In this menu, you will see an APPID in the title, shown as a number.
 3. Go to menu REmote Access>SSH>Modify, set a very strong password and tick enable password-based login

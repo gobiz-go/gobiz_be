@@ -68,6 +68,16 @@ Sign Up for a 100MB plan Free for life in [alwaysdata](https://www.alwaysdata.co
    ```
    ![image](https://github.com/gocroot/alwaysdata/assets/11188109/06330754-9167-4bf4-a214-5d75dab7c60a)  
 
+## Refresh Whatsapp API Token
+
+To continue using WhatsAuth service, we must get new token every 3 week before token expired in 30 days.
+1. Open Menu Scheduled tasks> Add scheduled task  
+   ![image](https://github.com/gocroot/alwaysdata/assets/11188109/0cf86344-c0c0-46be-a6e2-dda394dc3e51)  
+2. Select Access to URLs, fill in the value with https://yourappname.alwaysdata.net/whatsauth/refreshtoken also your email address.  
+   ![image](https://github.com/gocroot/alwaysdata/assets/11188109/79017d45-45cf-44f5-9fb2-a6935c5efe10)  
+3. Set Frequency every 3 weeks
+   ![image](https://github.com/gocroot/alwaysdata/assets/11188109/bc041c8c-cdd0-4f6a-bafc-df9330e4a9d4)  
+
 ## Upgrade Apps
 
 If you want to upgrade apps, please delete (go.mod) and (go.sum) files first, then type the command in your terminal or cmd :

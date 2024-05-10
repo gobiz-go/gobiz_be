@@ -24,6 +24,11 @@ type IteungMessage struct {
 	LiveLoc            bool    `json:"liveloc,omitempty" bson:"liveloc,omitempty"`
 }
 
+type Profile struct {
+	Token       string `bson:"token"`
+	Phonenumber string `bson:"phonenumber"`
+}
+
 type Reply struct {
 	Message string `bson:"messsage"`
 }

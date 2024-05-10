@@ -26,11 +26,13 @@ Follow this instruction:
    WAAPIQR=https://api.wa.my.id/api/whatsauth/request
    WAAPITXTMSG=https://api.wa.my.id/api/send/message/text
    ```
-   In this menu, you will see an APPID in the title, shown as a number.
+   In this menu, you will see an APPID in the title, shown as a number and a home folder used in the github secrets variable.
 3. Go to menu REmote Access>SSH>Modify, set a very strong password and tick enable password-based login
 4. Set APIKEY in Customer Area>Profile >Managing Tokens>Generate a token
-5. Add sshhost, sshusername, sshpassword, sshport, apikey, appid in your github secret>action variabel
+5. Add sshhost, sshusername, sshpassword, sshport, apikey, appid and folder in your GitHub secret>action variable
    ![image](https://github.com/gocroot/alwaysdata/assets/11188109/bc223d09-bf7a-4f6c-83f4-3a273ecce1ad)
+   ![image](https://github.com/gocroot/alwaysdata/assets/11188109/5cc1e831-49d5-47d1-9486-d6f0f748a963)  
+
    
 ## Rename Apps
 

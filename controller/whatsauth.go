@@ -51,7 +51,7 @@ func RefreshWAToken(c *fiber.Ctx) error {
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": err.Error(), "result": res})
 	}
-	return c.Status(fiber.StatusOK).JSON(fiber.Map{"ip_address": res})
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{"profile": profile, "result": res})
 }
 
 func IsLoginRequest(msg model.IteungMessage, keyword string) bool {

@@ -1,10 +1,13 @@
 # Golang template for CI/CD in alwaysdata.com
 
-This is a simple Golang template using Go Fibre as the base framework. It is compatible with alwaysdata.com CI/CD deployment.
+This is a simple Golang template using Go Fibre as the base framework, and mongodb.com as database host. It is compatible with alwaysdata.com CI/CD deployment.
 
 ## Go Boilerplate Folder Structure
 
+![image](https://github.com/gocroot/alwaysdata/assets/11188109/aa3a8162-3aa9-4a55-be6c-2e0caf5dcfef)  
+
 This boilerplate has several folders with different functions, such as:
+* .github: GitHub Action yml configuration.
 * URL: same as routes, this folder acts to route URL in the browser into the controller
 * config: all apps configuration like database, API, token.
 * controller: all of the endpoint function
@@ -24,11 +27,12 @@ Follow this instruction:
    WAQRKEYWORD=yourkeyword
    WEBHOOKSECRET=yoursecret
    ```
-   In this menu, you will see an APPID in the title, shown as a number.
+   In this menu, you will see an APPID in the title, shown as a number and a home folder used in the github secrets variable.
 3. Go to menu REmote Access>SSH>Modify, set a very strong password and tick enable password-based login
 4. Set APIKEY in Customer Area>Profile >Managing Tokens>Generate a token
-5. Add sshhost, sshusername, sshpassword, sshport, apikey, appid in your github secret>action variabel
-   ![image](https://github.com/gocroot/alwaysdata/assets/11188109/bc223d09-bf7a-4f6c-83f4-3a273ecce1ad)
+5. Add sshhost, sshusername, sshpassword, sshport, apikey, appid and folder in your GitHub secret>action variable
+   ![image](https://github.com/gocroot/alwaysdata/assets/11188109/5cc1e831-49d5-47d1-9486-d6f0f748a963)  
+
    
 ## Rename Apps
 

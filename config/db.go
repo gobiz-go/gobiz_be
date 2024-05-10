@@ -1,16 +1,16 @@
 package config
 
 import (
+	"gocroot/helper"
+	"gocroot/model"
 	"os"
-
-	"github.com/aiteung/atdb"
 )
 
 var MongoString string = os.Getenv("MONGOSTRING")
 
-var DBUlbimongoinfo = atdb.DBInfo{
-	DBString: MongoString,
-	DBName:   "bukupedia",
+var mongoinfo = model.DBInfo{
+	DBString: helper.SRVLookup(MongoString),
+	DBName:   "iteung",
 }
 
-var Ulbimongoconn = atdb.MongoConnect(DBUlbimongoinfo)
+var Mongoconn, _ = helper.MongoConnect(mongoinfo)

@@ -39,7 +39,7 @@ func RefreshWAToken(c *fiber.Ctx) error {
 		URL:    config.WebhookURL,
 		Secret: config.WebhookSecret,
 	}
-	resp, err := helper.PostStructWithToken[model.User]("Token", WAAPIToken(config.WAPhoneNumber), dt, config.WAAPIQRLogin)
+	resp, err := helper.PostStructWithToken[model.User]("Token", WAAPIToken(config.WAPhoneNumber), dt, config.WAAPIGetToken)
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": err.Error(), "response": resp})
 	}

@@ -4,11 +4,13 @@ This is a simple Golang template using Go Fibre as the base framework, and mongo
 
 ## MongoDB Preparation
 
-First thing to do is prepare mongo database using in this template:
-1. signup mongodb.com and create one instance of mongodb.
-2. Download mongocompass, connect with your mongostring URI from mongodb.com
+The first thing to do is prepare a Mongo database using this template:
+1. Sign up for mongodb.com and create one instance of Data Services of mongodb.
+2. Download mongo-compass, connect with your mongo string URI from mongodb.com
 3. Create database name iteung and collection reply
-3. Import [this json](https://whatsauth.my.id/webhook/iteung.reply.json) into reply collection.
+   ![image](https://github.com/gocroot/alwaysdata/assets/11188109/23ccddb7-bf42-42e2-baac-3d69f3a919f8)  
+4. Import [this json](https://whatsauth.my.id/webhook/iteung.reply.json) into reply collection.
+   ![image](https://github.com/gocroot/alwaysdata/assets/11188109/7a807d96-430f-4421-95fe-1c6a528ba428)  
 
 ## Go Boilerplate Folder Structure
 

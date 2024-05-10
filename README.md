@@ -7,6 +7,7 @@ This is a simple Golang template using Go Fibre as the base framework. It is com
 ![image](https://github.com/gocroot/alwaysdata/assets/11188109/aa3a8162-3aa9-4a55-be6c-2e0caf5dcfef)  
 
 This boilerplate has several folders with different functions, such as:
+* .github: GitHub Action yml configuration.
 * URL: same as routes, this folder acts to route URL in the browser into the controller
 * config: all apps configuration like database, API, token.
 * controller: all of the endpoint function

@@ -47,11 +47,11 @@ func RefreshWAToken(c *fiber.Ctx) error {
 		Phonenumber: resp.PhoneNumber,
 		Token:       resp.Token,
 	}
-	res, err := helper.ReplaceOneDoc(config.Mongoconn, "profile", bson.M{"phonenumer": resp.PhoneNumber}, profile)
+	res, err := helper.ReplaceOneDoc(config.Mongoconn, "profile", bson.M{"phonenumber": resp.PhoneNumber}, profile)
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": err.Error(), "result": res})
 	}
-	return c.Status(fiber.StatusOK).JSON(fiber.Map{"profile": profile, "result": res})
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{"result": res})
 }
 
 func IsLoginRequest(msg model.IteungMessage, keyword string) bool {

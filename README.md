@@ -2,6 +2,14 @@
 
 This is a simple Golang template using Go Fibre as the base framework, and mongodb.com as database host. It is compatible with alwaysdata.com CI/CD deployment.
 
+## MongoDB Preparation
+
+First thing to do is prepare mongo database using in this template:
+1. signup mongodb.com and create one instance of mongodb.
+2. Download mongocompass, connect with your mongostring URI from mongodb.com
+3. Create database name iteung and collection reply
+3. Import [this json](https://whatsauth.my.id/webhook/iteung.reply.json) into reply collection.
+
 ## Go Boilerplate Folder Structure
 
 ![image](https://github.com/gocroot/alwaysdata/assets/11188109/aa3a8162-3aa9-4a55-be6c-2e0caf5dcfef)  

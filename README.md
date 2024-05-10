@@ -22,13 +22,15 @@ This boilerplate has several folders with different functions, such as:
 * .github: GitHub Action yml configuration.
 * URL: same as routes, this folder acts to route URL in the browser into the controller
 * config: all apps configuration like database, API, token.
-* controller: all of the endpoint function
-* model: all of the type struct used in this app
+* controller: all of the endpoint functions
+* model: all of the type structs used in this app
 * helper: package folder with function only called by others
 
-## Alwaysdata.com CI/CD setting
+## Alwaysdata.com CI/CD set
 
-Follow this instruction:
+![image](https://github.com/gocroot/alwaysdata/assets/11188109/3ba8a59a-61a3-4018-9aef-40e35ade12b1)  
+
+Sign Up for a 100MB plan Free for life in [alwaysdata](https://www.alwaysdata.com/en/). Login into your dashboard and follow this instruction:
 1. Open the menu Web>Sites>Modify
    ![image](https://github.com/gocroot/alwaysdata/assets/11188109/a95bce70-f0fc-4a74-abfa-51ba3dd543d4)
 2. In the Configuration section edit command and Environment
@@ -45,7 +47,25 @@ Follow this instruction:
 5. Add sshhost, sshusername, sshpassword, sshport, apikey, appid and folder in your GitHub secret>action variable
    ![image](https://github.com/gocroot/alwaysdata/assets/11188109/5cc1e831-49d5-47d1-9486-d6f0f748a963)  
 
-   
+
+## WhatsAuth Signup
+
+1. Go to the [WhatsAuth signup page](https://wa.my.id/) and scan with your WhatsApp camera menu for login. 
+2. Input the webhook URL(alwaysdata.net subdomain) and your secret from the WEBHOOKSECRET setting environment on Always Data.
+   ![image](https://github.com/gocroot/alwaysdata/assets/11188109/e0b5cb9d-e9b3-4d04-bbd5-b03bd12293da)  
+3. Follow this instruction, in the end of instruction you will get 30 days token using [this request](https://wa.my.id/apidocs/#/signup/signUpNewUser)
+4. Save the token into MongoDB, open iteung db, create a profile collection and insert this JSON document with your 30-day token and your WhatsApp number.
+   ![image](https://github.com/gocroot/alwaysdata/assets/11188109/5b7144c3-3cdb-472b-8ab3-41fe86dad9cb)  
+   ![image](https://github.com/gocroot/alwaysdata/assets/11188109/829ae88a-be59-46f2-bddc-93482d0a4999)  
+
+   ```json
+   {
+     "token":"v4.public.asoiduas",
+     "phonenumber":"6281111"
+   }
+   ```
+   ![image](https://github.com/gocroot/alwaysdata/assets/11188109/06330754-9167-4bf4-a214-5d75dab7c60a)  
+
 ## Rename Apps
 
 If you want to rename apps, please delete (go.mod) and (go.sum) files first, then type the command in your terminal or cmd :

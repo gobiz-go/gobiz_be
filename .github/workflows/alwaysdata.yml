@@ -1,4 +1,4 @@
-name: Always Data Deploy
+name: AlwaysData.com Deployment
 on:
   push:
     branches:
@@ -17,19 +17,18 @@ jobs:
         # Semantic version range syntax or exact version of Go
         go-version: '1.22.x'
 
-    - name: Set CGO_ENABLED=0
+    - name: Set Env for build CGO_ENABLED=0
       run: go env -w CGO_ENABLED=0
   
     - name: Install dependencies
       run: go get .
     
-    - name: Build
-      run: go build -o gocroot
-
-    - name: chmod
-      run: chmod a+x gocroot
+    - name: Build and chmod
+      run: |
+        go build -o gocroot
+        chmod a+x gocroot
     
-    - name: copy binary file via ssh password
+    - name: Copy binary file via ssh password
       uses: appleboy/scp-action@v0.1.7
       with:
         host: ${{ secrets.sshhost }}

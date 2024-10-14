@@ -16,5 +16,15 @@ type Author struct {
 }
 
 type Login struct {
-	Login string `json:"login,omitempty" bson:"login,omitempty" query:"login" url:"login,omitempty" reqHeader:"login"`
+	ID			primitive.ObjectID 		`json:"_id,omitempty" bson:"_id,omitempty" query:"id" url:"_id,omitempty" reqHeader:"id"`
+	Username	string					`json:"username,omitempty" bson:"username,omitempty"`
+	Password	string					`json:"password,omitempty" bson:"password,omitempty"`
+}
+
+type Register struct {
+	ID			primitive.ObjectID 		`json:"_id,omitempty" bson:"_id,omitempty" query:"id" url:"_id,omitempty" reqHeader:"id"`
+	Username	string					`json:"username,omitempty" bson:"username,omitempty"`
+	Password	string					`json:"password,omitempty" bson:"password,omitempty"`
+	Email		string					`json:"email,omitempty" bson:"email,omitempty"`
+	Phone		string					`json:"phone,omitempty" bson:"phone,omitempty"`
 }

@@ -9,8 +9,8 @@ import (
 var MongoString string = os.Getenv("MONGOSTRING")
 
 var mongoinfo = model.DBInfo{
-	DBString: helper.SRVLookup(MongoString),
-	DBName:   "iteung",
+	DBString: MongoString,
+	DBName:   "gobizdevelop",
 }
 
-var Mongoconn, _ = helper.MongoConnect(mongoinfo)
+var Mongoconn, ErrorMongoconn = helper.MongoConnect(mongoinfo)
